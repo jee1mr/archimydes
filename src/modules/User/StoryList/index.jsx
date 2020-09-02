@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // UI
-import { Button, Table } from 'antd'
+import { Button, Table, Space } from 'antd'
 
 // App Imports
+import './style.scss'
 import api from 'setup/api'
 import { apiUrl } from 'setup/helpers'
 import routesApi from 'setup/routesApi'
@@ -33,18 +34,20 @@ const StoryList = () => {
   }
 
   return (
-    <div>
-      <Logout />
-      <Link as={Button} to={'/user/story/create'}>
-        Create Story
-      </Link>
+    <Space direction="vertical" size="large" className="user-story-list">
+      <Space size="large">
+        <Logout />
+        <Link as={Button} to={'/user/story/create'}>
+          Create Story
+        </Link>
+      </Space>
       <Table
         dataSource={storyList}
         columns={tableColumns}
         pagination={false}
         rowKey="id"
       />
-    </div>
+    </Space>
   )
 }
 

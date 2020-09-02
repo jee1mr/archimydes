@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 // UI
-import { Table } from 'antd'
+import { Table, Space } from 'antd'
 
 // App Imports
 import './style.scss'
@@ -47,7 +47,7 @@ const StoryList = () => {
   }
 
   return (
-    <>
+    <Space direction="vertical" size="large" className="admin-story-list">
       <Logout />
       <Table
         onRow={onRow}
@@ -58,7 +58,7 @@ const StoryList = () => {
         rowKey="id"
         className="admin-story-table"
       />
-    </>
+    </Space>
   )
 }
 

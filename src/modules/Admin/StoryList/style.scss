@@ -1,0 +1,15 @@
+$acceptedBg: #bfdcae;
+$rejectedBg: #eb8f8f;
+$defaultBg: #d8d3cd;
+
+.admin-story-table {
+  .accepted {
+    background-color: $acceptedBg;
+  }
+  .rejected {
+    background-color: $rejectedBg;
+  }
+  .default {
+    background-color: $defaultBg;
+  }
+}

@@ -6,6 +6,7 @@ import { Link, useParams, useHistory } from 'react-router-dom'
 import { Card, Descriptions, Button, Space } from 'antd'
 
 // App Imports
+import './style.scss'
 import api from 'setup/api'
 import { apiUrl } from 'setup/helpers'
 import routesApi from 'setup/routesApi'
@@ -58,9 +59,11 @@ const StoryReview = () => {
   }
 
   return (
-    <div>
-      <Logout />
-      <Link to={'/admin/story/list'}>Go back</Link>
+    <Space size="large" direction="vertical" className="admin-story-review">
+      <Space size="large">
+        <Logout />
+        <Link to={'/admin/story/list'}>Go back</Link>
+      </Space>
       <Card title={storyDetail.summary}>
         <Descriptions column={1} layout="horizontal">
           <Descriptions.Item label="Description">
@@ -87,7 +90,7 @@ const StoryReview = () => {
           Reject
         </Button>
       </Space>
-    </div>
+    </Space>
   )
 }
 

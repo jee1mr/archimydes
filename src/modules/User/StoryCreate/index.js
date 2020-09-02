@@ -5,9 +5,10 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 
 // UI
-import { Card } from 'antd'
+import { Card, Space } from 'antd'
 
 // App Imports
+import './style.scss'
 import api from 'setup/api'
 import { apiUrl } from 'setup/helpers'
 import routesApi from 'setup/routesApi'
@@ -41,7 +42,7 @@ const StoryCreate = () => {
   }
 
   return (
-    <>
+    <Space direction="vertical" size="large" className="user-story-create">
       <Logout />
       <Card className="story-create-card" title="Create a Story">
         <Formik
@@ -59,7 +60,7 @@ const StoryCreate = () => {
           <StoryCreateFormUI />
         </Formik>
       </Card>
-    </>
+    </Space>
   )
 }
 
